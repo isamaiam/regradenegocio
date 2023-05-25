@@ -1,7 +1,7 @@
 ﻿
 namespace regradenegocio
 {
-    partial class Form1
+    partial class cadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -36,17 +36,20 @@ namespace regradenegocio
             this.txtSobrenome = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblCep = new System.Windows.Forms.Label();
-            this.txtCep = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtLog = new System.Windows.Forms.TextBox();
-            this.txtDataNasc = new System.Windows.Forms.TextBox();
             this.lblDataNasc = new System.Windows.Forms.Label();
             this.lblLogradouro = new System.Windows.Forms.Label();
+            this.dtNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.btnData = new System.Windows.Forms.Button();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(385, 265);
+            this.btnEnviar.Location = new System.Drawing.Point(386, 294);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(75, 23);
             this.btnEnviar.TabIndex = 0;
@@ -102,19 +105,12 @@ namespace regradenegocio
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(335, 180);
+            this.lblCep.Location = new System.Drawing.Point(336, 209);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 7;
             this.lblCep.Text = "CEP";
             this.lblCep.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // txtCep
-            // 
-            this.txtCep.Location = new System.Drawing.Point(410, 180);
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(100, 20);
-            this.txtCep.TabIndex = 8;
             // 
             // txtLogin
             // 
@@ -122,26 +118,19 @@ namespace regradenegocio
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
             this.txtLogin.TabIndex = 9;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(410, 202);
+            this.txtLog.Location = new System.Drawing.Point(411, 231);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(100, 20);
             this.txtLog.TabIndex = 13;
             // 
-            // txtDataNasc
-            // 
-            this.txtDataNasc.Location = new System.Drawing.Point(443, 228);
-            this.txtDataNasc.Name = "txtDataNasc";
-            this.txtDataNasc.Size = new System.Drawing.Size(100, 20);
-            this.txtDataNasc.TabIndex = 12;
-            this.txtDataNasc.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
             // lblDataNasc
             // 
             this.lblDataNasc.AutoSize = true;
-            this.lblDataNasc.Location = new System.Drawing.Point(335, 231);
+            this.lblDataNasc.Location = new System.Drawing.Point(336, 260);
             this.lblDataNasc.Name = "lblDataNasc";
             this.lblDataNasc.Size = new System.Drawing.Size(102, 13);
             this.lblDataNasc.TabIndex = 11;
@@ -150,23 +139,71 @@ namespace regradenegocio
             // lblLogradouro
             // 
             this.lblLogradouro.AutoSize = true;
-            this.lblLogradouro.Location = new System.Drawing.Point(335, 205);
+            this.lblLogradouro.Location = new System.Drawing.Point(336, 234);
             this.lblLogradouro.Name = "lblLogradouro";
             this.lblLogradouro.Size = new System.Drawing.Size(61, 13);
             this.lblLogradouro.TabIndex = 10;
             this.lblLogradouro.Text = "Logradouro";
             // 
-            // Form1
+            // dtNascimento
+            // 
+            this.dtNascimento.Location = new System.Drawing.Point(444, 260);
+            this.dtNascimento.MaxDate = new System.DateTime(2024, 5, 24, 0, 0, 0, 0);
+            this.dtNascimento.Name = "dtNascimento";
+            this.dtNascimento.Size = new System.Drawing.Size(200, 20);
+            this.dtNascimento.TabIndex = 14;
+            this.dtNascimento.Value = new System.DateTime(2023, 5, 24, 0, 0, 0, 0);
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(410, 180);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(100, 20);
+            this.txtSenha.TabIndex = 16;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(335, 183);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.TabIndex = 15;
+            this.lblSenha.Text = "Senha";
+            this.lblSenha.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // btnData
+            // 
+            this.btnData.Location = new System.Drawing.Point(545, 294);
+            this.btnData.Name = "btnData";
+            this.btnData.Size = new System.Drawing.Size(75, 23);
+            this.btnData.TabIndex = 17;
+            this.btnData.Text = "Data atual";
+            this.btnData.UseVisualStyleBackColor = true;
+            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            // 
+            // txtCep
+            // 
+            this.txtCep.Location = new System.Drawing.Point(410, 206);
+            this.txtCep.Mask = "00000-000";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(100, 20);
+            this.txtCep.TabIndex = 18;
+            // 
+            // cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.btnData);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.lblSenha);
+            this.Controls.Add(this.dtNascimento);
             this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.txtDataNasc);
             this.Controls.Add(this.lblDataNasc);
             this.Controls.Add(this.lblLogradouro);
             this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.lblCep);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtSobrenome);
@@ -174,7 +211,7 @@ namespace regradenegocio
             this.Controls.Add(this.lblSobrenome);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnEnviar);
-            this.Name = "Form1";
+            this.Name = "cadastro";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,12 +227,15 @@ namespace regradenegocio
         private System.Windows.Forms.TextBox txtSobrenome;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblCep;
-        private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.TextBox txtDataNasc;
         private System.Windows.Forms.Label lblDataNasc;
         private System.Windows.Forms.Label lblLogradouro;
+        private System.Windows.Forms.DateTimePicker dtNascimento;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.MaskedTextBox txtCep;
     }
 }
 
