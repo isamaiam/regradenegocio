@@ -122,6 +122,7 @@ namespace regradenegocio
             // 
             // txtLog
             // 
+            this.txtLog.Enabled = false;
             this.txtLog.Location = new System.Drawing.Point(411, 231);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(100, 20);
@@ -189,6 +190,8 @@ namespace regradenegocio
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(100, 20);
             this.txtCep.TabIndex = 18;
+            this.txtCep.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCep_MaskInputRejected);
+            this.txtCep.TextChanged += new System.EventHandler(this.BuscaCep);
             // 
             // cadastro
             // 
