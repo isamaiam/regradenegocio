@@ -41,6 +41,8 @@ namespace regradenegocio
             this.lblCep = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.TextBox();
             this.lstCep = new System.Windows.Forms.ListView();
+            this.btnTemperatura = new System.Windows.Forms.Button();
+            this.lblTemperatura = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstHoras
@@ -155,11 +157,32 @@ namespace regradenegocio
             this.lstCep.TabIndex = 11;
             this.lstCep.UseCompatibleStateImageBehavior = false;
             // 
+            // btnTemperatura
+            // 
+            this.btnTemperatura.Location = new System.Drawing.Point(764, 81);
+            this.btnTemperatura.Name = "btnTemperatura";
+            this.btnTemperatura.Size = new System.Drawing.Size(75, 57);
+            this.btnTemperatura.TabIndex = 12;
+            this.btnTemperatura.Text = "Qual a temperatura de hoje?";
+            this.btnTemperatura.UseVisualStyleBackColor = true;
+            this.btnTemperatura.Click += new System.EventHandler(this.btnTemperatura_Click);
+            // 
+            // lblTemperatura
+            // 
+            this.lblTemperatura.AutoSize = true;
+            this.lblTemperatura.Location = new System.Drawing.Point(892, 103);
+            this.lblTemperatura.Name = "lblTemperatura";
+            this.lblTemperatura.Size = new System.Drawing.Size(35, 13);
+            this.lblTemperatura.TabIndex = 13;
+            this.lblTemperatura.Text = "label1";
+            // 
             // arearestrita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 683);
+            this.ClientSize = new System.Drawing.Size(1092, 683);
+            this.Controls.Add(this.lblTemperatura);
+            this.Controls.Add(this.btnTemperatura);
             this.Controls.Add(this.lstCep);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.lblCep);
@@ -193,5 +216,7 @@ namespace regradenegocio
         private System.Windows.Forms.Label lblCep;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.ListView lstCep;
+        private System.Windows.Forms.Button btnTemperatura;
+        private System.Windows.Forms.Label lblTemperatura;
     }
 }
